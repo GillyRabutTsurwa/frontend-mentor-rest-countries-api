@@ -30,7 +30,7 @@ export default {
 <style lang="scss">
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 35rem));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 40rem));
   gap: 3rem;
   justify-content: center;
 }
