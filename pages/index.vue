@@ -9,6 +9,9 @@
         <a href="https://restcountries.eu/#api-endpoints-name" target="_blank" rel="noopener noreferrer" class="button--green">
           API Link
         </a>
+        <nuxt-link to="/all" class="button--green">
+          All Countries
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -22,11 +25,7 @@ export default {
     const response = await this.$axios.$get(
       "https://restcountries.eu/rest/v2/all"
     );
-    const response1 = await this.$axios.$get(
-      `https://restcountries.eu/rest/v2/name/kenya`
-    );
     console.log(response);
-    console.log(response1);
   },
 };
 </script>
