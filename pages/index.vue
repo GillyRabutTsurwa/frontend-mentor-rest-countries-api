@@ -18,16 +18,7 @@
 </template>
 
 <script>
-// TESTING: Axios fetching requests
-import axios from "@nuxtjs/axios";
-export default {
-  async created() {
-    const response = await this.$axios.$get(
-      "https://restcountries.eu/rest/v2/all"
-    );
-    console.log(response);
-  },
-};
+export default {};
 </script>
 
 <style lang="scss">

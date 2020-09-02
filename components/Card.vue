@@ -1,20 +1,18 @@
 <template>
-  <div class="cards-container">
-    <div class="card">
-      <div class="card__country">
-        <img v-bind:src="cardInfo.flag" alt="">
+  <div class="card">
+    <div class="card__country">
+      <img v-bind:src="countryObj.flag" alt="">
+    </div>
+    <div class="card__info">
+      <h5 class="card__info--title">{{countryObj.name}}</h5>
+      <div class="card__info-section">
+        <span class="card__info--subtitle">Population</span>: <span class="card__info--data">{{countryObj.population}}</span>
       </div>
-      <div class="card__info">
-        <h5 class="card__info--title">{{cardInfo.name}}</h5>
-        <div class="card__info-section">
-          <span class="card__info--subtitle">Population</span>: <span class="card__info--data">{{cardInfo.population}}</span>
-        </div>
-        <div class="card__info-section">
-          <span class="card__info--subtitle">Region</span>: <span class="card__info--data">{{cardInfo.region}}</span>
-        </div>
-        <div class="card__info-section">
-          <span class="card__info--subtitle">Capital</span>: <span class="card__info--data">{{cardInfo.capital}}</span>
-        </div>
+      <div class="card__info-section">
+        <span class="card__info--subtitle">Region</span>: <span class="card__info--data">{{countryObj.region}}</span>
+      </div>
+      <div class="card__info-section">
+        <span class="card__info--subtitle">Capital</span>: <span class="card__info--data">{{countryObj.capital}}</span>
       </div>
     </div>
   </div>
@@ -23,35 +21,16 @@
 <script>
 import axios from "@nuxtjs/axios";
 export default {
-  data() {
-    return {
-      cardInfo: {
-        flag: "",
-        name: "",
-        population: null,
-        region: "",
-        capital: "",
-      },
-    };
-  },
-  async created() {
-    const responseKE = await this.$axios.$get(
-      `https://restcountries.eu/rest/v2/name/kenya`
-    );
-    console.log(responseKE);
-    this.cardInfo.flag = responseKE[0].flag;
-    this.cardInfo.name = responseKE[0].name;
-    this.cardInfo.population = responseKE[0].population;
-    this.cardInfo.region = responseKE[0].region;
-    this.cardInfo.capital = responseKE[0].capital;
+  props: {
+    countryObj: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
 
 <style lang="scss">
-.cards-container {
-  margin: 2rem;
-}
 .card {
   width: 30rem;
   height: 40rem;
