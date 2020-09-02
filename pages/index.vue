@@ -9,7 +9,7 @@
         <a href="https://restcountries.eu/#api-endpoints-name" target="_blank" rel="noopener noreferrer" class="button--green">
           API Link
         </a>
-        <nuxt-link to="/all" class="button--green">
+        <nuxt-link to="/countries" class="button--green">
           All Countries
         </nuxt-link>
       </div>
