@@ -111,7 +111,6 @@ export default {
     object-fit: cover;
     // TESTING:
     position: relative;
-    background-size: cover;
   }
 }
 
