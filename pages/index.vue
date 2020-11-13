@@ -1,25 +1,25 @@
 <template>
   <div class="container">
-    <div>
-      <!-- <Logo /> -->
+    <!-- <div> -->
+    <!-- <Logo /> -->
 
-      <div class="main-page-img">
-        <transition name="fade" mode="out-in">
-          <img v-bind:src="currentFlag" v-bind:key="currentFlag" alt="">
-        </transition>
-      </div>
-      <h1 class="title">
-        <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries API</a>
-      </h1>
-      <div class="links">
-        <a href="https://restcountries.eu/#api-endpoints-name" target="_blank" rel="noopener noreferrer" class="button--green">
-          API Link
-        </a>
-        <nuxt-link to="/countries" class="button--green">
-          All Countries
-        </nuxt-link>
-      </div>
+    <div class="main-page-img">
+      <transition name="fade" mode="out-in">
+        <img v-bind:src="currentFlag" v-bind:key="currentFlag" alt="">
+      </transition>
     </div>
+    <h1 class="title">
+      <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca" target="_blank">Rest Countries API</a>
+    </h1>
+    <div class="links">
+      <a href="https://restcountries.eu/#api-endpoints-name" target="_blank" rel="noopener noreferrer" class="button--green">
+        API Link
+      </a>
+      <nuxt-link to="/countries" class="button--green">
+        All Countries
+      </nuxt-link>
+    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -100,9 +100,9 @@ export default {
 }
 
 .main-page-img {
-  width: 50rem;
-  height: 30rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  // box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.4);
   margin: 0 auto;
 
   img {
@@ -111,6 +111,7 @@ export default {
     object-fit: cover;
     // TESTING:
     position: relative;
+    background-size: cover;
   }
 }
 
