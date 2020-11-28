@@ -38,7 +38,7 @@ export default {
     },
     startFadingImages() {
       this.randomiseIndex();
-      setInterval(this.randomiseIndex, 6000);
+      setInterval(this.randomiseIndex, 3000);
     },
   },
   async created() {
@@ -114,18 +114,50 @@ export default {
   }
 }
 
+// .fade-enter-active {
+//   transition: opacity 1s ease-in;
+//   // transition-delay: 1s;
+// }
+
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: all 0.5s ease-in;
+//   opacity: 1;
+// }
+// .fade-enter,
+// .fade-leave-to {
+//   opacity: 0;
+// }
+
 .fade-enter-active {
-  transition: opacity 5s ease-in;
-  // transition-delay: 1s;
+  animation-name: fadeEnter;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
+}
+.fade-move {
+  transition: all 5.25s;
+}
+.fade-leave-active {
+  animation-name: fadeLeave;
+  animation-duration: 2.25s;
+  animation-iteration-count: 1;
+  position: absolute;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 2s ease-in;
-  opacity: 1;
+@keyframes fadeEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+@keyframes fadeLeave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 </style>
